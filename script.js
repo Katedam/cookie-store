@@ -13,11 +13,13 @@ var pioneerSquare = {
         return Math.floor(this.randomNumCustomers() * this.avgSalesPerCust);
     },
     toHTML: function () {
+        var cookiesSold = 0;
         var HTML = "<h2>" + this.location + "</h2><ul>";
         for (var hourly = 0; hourly < hours.length; hourly++) {
             HTML += "<li>" + hours[hourly] + ": " + this.cookiesPerHour() + " cookies" + "</li>";
+            cookiesSold += this.cookiesPerHour();
         } 
-        HTML += "</ul>";
+        HTML += "<li>" + "Total: " + cookiesSold + "</li>" + "</ul>";
         return HTML;
     }
 }
@@ -35,11 +37,13 @@ var portlandAirport = {
         return Math.floor(this.randomNumCustomers() * this.avgSalesPerCust);
     },
     toHTML: function () {
+        var cookiesSold = 0;
         var HTML = "<h2>" + this.location + "</h2><ul>";
         for (var hourly = 0; hourly < hours.length; hourly++) {
             HTML += "<li>" + hours[hourly] + ": " + this.cookiesPerHour() + " cookies" + "</li>";
+            cookiesSold += this.cookiesPerHour();
         } 
-        HTML += "</ul>";
+        HTML += "<li>" + "Total: " + cookiesSold + "</li>" + "</ul>";
         return HTML;
     }
 }
@@ -57,11 +61,13 @@ var washingtonSquare = {
         return Math.floor(this.randomNumCustomers() * this.avgSalesPerCust);
     },
     toHTML: function () {
+        var cookiesSold = 0;
         var HTML = "<h2>" + this.location + "</h2><ul>";
         for (var hourly = 0; hourly < hours.length; hourly++) {
             HTML += "<li>" + hours[hourly] + ": " + this.cookiesPerHour() + " cookies" + "</li>";
+            cookiesSold += this.cookiesPerHour();
         } 
-        HTML += "</ul>";
+        HTML += "<li>" + "Total: " + cookiesSold + "</li>" + "</ul>";
         return HTML;
     }
 }
@@ -79,11 +85,13 @@ var sellwood = {
         return Math.floor(this.randomNumCustomers() * this.avgSalesPerCust);
     },
     toHTML: function () {
+        var cookiesSold = 0;
         var HTML = "<h2>" + this.location + "</h2><ul>";
         for (var hourly = 0; hourly < hours.length; hourly++) {
             HTML += "<li>" + hours[hourly] + ": " + this.cookiesPerHour() + " cookies" + "</li>";
+            cookiesSold += this.cookiesPerHour();
         } 
-        HTML += "</ul>";
+        HTML += "<li>" + "Total: " + cookiesSold + "</li>" + "</ul>";
         return HTML;
     }
 }
@@ -101,11 +109,13 @@ var pearlDistrict = {
         return Math.floor(this.randomNumCustomers() * this.avgSalesPerCust);
     },
     toHTML: function () {
+        var cookiesSold = 0;
         var HTML = "<h2>" + this.location + "</h2><ul>";
         for (var hourly = 0; hourly < hours.length; hourly++) {
             HTML += "<li>" + hours[hourly] + ": " + this.cookiesPerHour() + " cookies" + "</li>";
+            cookiesSold += this.cookiesPerHour();
         } 
-        HTML += "</ul>";
+        HTML += "<li>" + "Total: " + cookiesSold + "</li>" + "</ul>";
         return HTML;
     }
 }
