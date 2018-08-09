@@ -1,5 +1,6 @@
-var hours = ["10:00-11:00", "11:00-12:00", "12:00-1:00", "1:00-2:00", "2:00-3:00", "3:00-4:00", "4:00-5:00", "5:00-6:00"];
-
+var hours = ["10:00", "11:00", "12:00", "1:00", "2:00", "3:00", "4:00", "5:00"];
+var tableStyle = "style='line-height: 1.3; box-shadow: 0 4px 8px 0 #222222; float: left; background-color: black; color: white; margin-left: 10px; padding: 1em; border: 1px solid white;'";
+var headerStyle = "style='text-align: left;'";
 var pioneerSquare = {
     location: "Pioneer Square",
     hoursOpen: hours,
@@ -14,12 +15,12 @@ var pioneerSquare = {
     },
     toHTML: function () {
         var cookiesSold = 0;
-        var HTML = "<h2>" + this.location + "</h2><ul>";
+        var HTML = "<table " + tableStyle + "><tr><th colspan='2'>" + this.location + "</th></tr><tr><th " + headerStyle + ">Hour</th><th>Cookies Sold</th></tr>";
         for (var hourly = 0; hourly < hours.length; hourly++) {
-            HTML += "<li>" + hours[hourly] + ": " + this.cookiesPerHour() + " cookies" + "</li>";
+            HTML += "<tr><td>" + hours[hourly] + "</td><td>" + this.cookiesPerHour() + " cookies" + "</td></tr>";
             cookiesSold += this.cookiesPerHour();
         } 
-        HTML += "<li>" + "Total: " + cookiesSold + "</li>" + "</ul>";
+        HTML += "<tr><td colspan='2'>" + "Total: " + cookiesSold + "</td></tr>" + "</table>";
         return HTML;
     }
 }
@@ -38,12 +39,12 @@ var portlandAirport = {
     },
     toHTML: function () {
         var cookiesSold = 0;
-        var HTML = "<h2>" + this.location + "</h2><ul>";
+        var HTML = "<table " + tableStyle + "><tr><th colspan='2'>" + this.location + "</th></tr><tr><th " + headerStyle + ">Hour</th><th>Cookies Sold</th></tr>";
         for (var hourly = 0; hourly < hours.length; hourly++) {
-            HTML += "<li>" + hours[hourly] + ": " + this.cookiesPerHour() + " cookies" + "</li>";
+            HTML += "<tr><td>" + hours[hourly] + "</td><td>" + this.cookiesPerHour() + " cookies" + "</td></tr>";
             cookiesSold += this.cookiesPerHour();
         } 
-        HTML += "<li>" + "Total: " + cookiesSold + "</li>" + "</ul>";
+        HTML += "<tr><td colspan='2'>" + "Total: " + cookiesSold + "</td></tr>" + "</table>";
         return HTML;
     }
 }
@@ -62,12 +63,12 @@ var washingtonSquare = {
     },
     toHTML: function () {
         var cookiesSold = 0;
-        var HTML = "<h2>" + this.location + "</h2><ul>";
+        var HTML = "<table " + tableStyle + "><tr><th colspan='2'>" + this.location + "</th></tr><tr><th " + headerStyle + ">Hour</th><th>Cookies Sold</th></tr>";
         for (var hourly = 0; hourly < hours.length; hourly++) {
-            HTML += "<li>" + hours[hourly] + ": " + this.cookiesPerHour() + " cookies" + "</li>";
+            HTML += "<tr><td>" + hours[hourly] + "</td><td>" + this.cookiesPerHour() + " cookies" + "</td></tr>";
             cookiesSold += this.cookiesPerHour();
         } 
-        HTML += "<li>" + "Total: " + cookiesSold + "</li>" + "</ul>";
+        HTML += "<tr><td colspan='2'>" + "Total: " + cookiesSold + "</td></tr>" + "</table>";
         return HTML;
     }
 }
@@ -86,12 +87,12 @@ var sellwood = {
     },
     toHTML: function () {
         var cookiesSold = 0;
-        var HTML = "<h2>" + this.location + "</h2><ul>";
+        var HTML = "<table " + tableStyle + "><tr><th colspan='2'>" + this.location + "</th></tr><tr><th " + headerStyle + ">Hour</th><th>Cookies Sold</th></tr>";
         for (var hourly = 0; hourly < hours.length; hourly++) {
-            HTML += "<li>" + hours[hourly] + ": " + this.cookiesPerHour() + " cookies" + "</li>";
+            HTML += "<tr><td>" + hours[hourly] + "</td><td>" + this.cookiesPerHour() + " cookies" + "</td></tr>";
             cookiesSold += this.cookiesPerHour();
         } 
-        HTML += "<li>" + "Total: " + cookiesSold + "</li>" + "</ul>";
+        HTML += "<tr><td colspan='2'>" + "Total: " + cookiesSold + "</td></tr>" + "</table>";
         return HTML;
     }
 }
@@ -110,12 +111,12 @@ var pearlDistrict = {
     },
     toHTML: function () {
         var cookiesSold = 0;
-        var HTML = "<h2>" + this.location + "</h2><ul>";
+        var HTML = "<table " + tableStyle + "><tr><th colspan='2'>" + this.location + "</th></tr><tr><th " + headerStyle + ">Hour</th><th>Cookies Sold</th></tr>";
         for (var hourly = 0; hourly < hours.length; hourly++) {
-            HTML += "<li>" + hours[hourly] + ": " + this.cookiesPerHour() + " cookies" + "</li>";
+            HTML += "<tr><td>" + hours[hourly] + "</td><td>" + this.cookiesPerHour() + " cookies" + "</td></tr>";
             cookiesSold += this.cookiesPerHour();
         } 
-        HTML += "<li>" + "Total: " + cookiesSold + "</li>" + "</ul>";
+        HTML += "<tr><td colspan='2'>" + "Total: " + cookiesSold + "</td></tr>" + "</table>";
         return HTML;
     }
 }
@@ -134,4 +135,3 @@ for (var index = 0; index < storeLocation.length; index++) {
     console.log("make a list of store locations");
 }
 
-//buildList();
