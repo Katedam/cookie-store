@@ -5,8 +5,20 @@ var pioneerSquare = {
     hoursOpen: hours,
     minCustomers: 17,
     maxCustomers: 88,
+    avgSalesPerCust: 5.2,
     randomNumCustomers: function() {
-        Math.random() * (this.maxCustomers - this.minCustomers) + this.minCustomers;
+      return  Math.random() * (this.maxCustomers - this.minCustomers) + this.minCustomers;
+    },
+    cookiesPerHour: function() {
+        return Math.floor(this.randomNumCustomers() * this.avgSalesPerCust);
+    },
+    toHTML: function () {
+        var HTML = "<h2>" + this.location + "</h2><ul>";
+        for (var hourly = 0; hourly < hours.length; hourly++) {
+            HTML += "<li>" + hours[hourly] + ": " + this.cookiesPerHour() + " cookies" + "</li>";
+        } 
+        HTML += "</ul>";
+        return HTML;
     }
 }
 
@@ -17,7 +29,18 @@ var portlandAirport = {
     maxCustomers: 24,
     avgSalesPerCust: 1.2,
     randomNumCustomers: function() {
-        return Math.random() * (this.maxCustomers - this.minCustomers) + this.minCustomers;
+        return  Math.random() * (this.maxCustomers - this.minCustomers) + this.minCustomers;
+    },
+    cookiesPerHour: function() {
+        return Math.floor(this.randomNumCustomers() * this.avgSalesPerCust);
+    },
+    toHTML: function () {
+        var HTML = "<h2>" + this.location + "</h2><ul>";
+        for (var hourly = 0; hourly < hours.length; hourly++) {
+            HTML += "<li>" + hours[hourly] + ": " + this.cookiesPerHour() + " cookies" + "</li>";
+        } 
+        HTML += "</ul>";
+        return HTML;
     }
 }
 
@@ -28,7 +51,18 @@ var washingtonSquare = {
     maxCustomers: 38,
     avgSalesPerCust: 1.9,
     randomNumCustomers: function() {
-        Math.random() * (this.maxCustomers - this.minCustomers) + this.minCustomers;
+        return  Math.random() * (this.maxCustomers - this.minCustomers) + this.minCustomers;
+    },
+    cookiesPerHour: function() {
+        return Math.floor(this.randomNumCustomers() * this.avgSalesPerCust);
+    },
+    toHTML: function () {
+        var HTML = "<h2>" + this.location + "</h2><ul>";
+        for (var hourly = 0; hourly < hours.length; hourly++) {
+            HTML += "<li>" + hours[hourly] + ": " + this.cookiesPerHour() + " cookies" + "</li>";
+        } 
+        HTML += "</ul>";
+        return HTML;
     }
 }
 
@@ -39,7 +73,18 @@ var sellwood = {
     maxCustomers: 48,
     avgSalesPerCust: 3.3,
     randomNumCustomers: function() {
-        Math.random() * (this.maxCustomers - this.minCustomers) + this.minCustomers;
+        return  Math.random() * (this.maxCustomers - this.minCustomers) + this.minCustomers;
+    },
+    cookiesPerHour: function() {
+        return Math.floor(this.randomNumCustomers() * this.avgSalesPerCust);
+    },
+    toHTML: function () {
+        var HTML = "<h2>" + this.location + "</h2><ul>";
+        for (var hourly = 0; hourly < hours.length; hourly++) {
+            HTML += "<li>" + hours[hourly] + ": " + this.cookiesPerHour() + " cookies" + "</li>";
+        } 
+        HTML += "</ul>";
+        return HTML;
     }
 }
 
@@ -50,6 +95,33 @@ var pearlDistrict = {
     maxCustomers: 24,
     avgSalesPerCust: 2.6,
     randomNumCustomers: function() {
-        Math.random() * (this.maxCustomers - this.minCustomers) + this.minCustomers;
+        return  Math.floor(Math.random() * (this.maxCustomers - this.minCustomers) + this.minCustomers);
+    },
+    cookiesPerHour: function() {
+        return Math.floor(this.randomNumCustomers() * this.avgSalesPerCust);
+    },
+    toHTML: function () {
+        var HTML = "<h2>" + this.location + "</h2><ul>";
+        for (var hourly = 0; hourly < hours.length; hourly++) {
+            HTML += "<li>" + hours[hourly] + ": " + this.cookiesPerHour() + " cookies" + "</li>";
+        } 
+        HTML += "</ul>";
+        return HTML;
     }
 }
+
+var storeLocation = [
+    pioneerSquare,
+    portlandAirport,
+    washingtonSquare,
+    sellwood,
+    pearlDistrict,
+]
+
+var list = document.getElementById("store-locations");
+for (var index = 0; index < storeLocation.length; index++) {
+    list.innerHTML += storeLocation[index].toHTML();
+    console.log("make a list of store locations");
+}
+
+//buildList();
