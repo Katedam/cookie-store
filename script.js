@@ -1,6 +1,6 @@
 var hours = ["10:00", "11:00", "12:00", "1:00", "2:00", "3:00", "4:00", "5:00"];
-var tableStyle = "style='line-height: 1.3; box-shadow: 0 4px 8px 0 #222222; float: left; background-color: black; color: white; margin-left: 10px; padding: 1em; border: 1px solid white;'";
-var headerStyle = "style='text-align: left;'";
+var tableStyle = "style='line-height: 1.3; width: 175px; box-shadow: 0 4px 8px 0 #222222; float: left; background-color: black; color: white; margin-left: 10px; padding: 1em; border: 1px solid white;'";
+var headerStyle = "style='text-align: left; padding-bottom: 5px;'";
 var pioneerSquare = {
     location: "Pioneer Square",
     hoursOpen: hours,
@@ -15,7 +15,7 @@ var pioneerSquare = {
     },
     toHTML: function () {
         var cookiesSold = 0;
-        var HTML = "<table " + tableStyle + "><tr><th colspan='2'>" + this.location + "</th></tr><tr><th " + headerStyle + ">Hour</th><th>Cookies Sold</th></tr>";
+        var HTML = "<table " + tableStyle + "><tr><th colspan='2'>" + this.location + "</th></tr><tr><th " + headerStyle + ">Hour</th><th " + headerStyle + ">Cookies Sold</th></tr>";
         for (var hourly = 0; hourly < hours.length; hourly++) {
             HTML += "<tr><td>" + hours[hourly] + "</td><td>" + this.cookiesPerHour() + " cookies" + "</td></tr>";
             cookiesSold += this.cookiesPerHour();
