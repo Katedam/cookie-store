@@ -6,6 +6,9 @@ body {
     background-size: cover;
 }
 
+h2 {
+    color: rgb(186,110,64);
+}
 .navBar {
     background-color: rgb(40,46,43);
     overflow: hidden;
@@ -62,9 +65,13 @@ body {
     text-align: left;
 }
 
+#shop {
+    text-align: left;
+}
+
 #shop img {
     width: 200px;
-    margin: 1em 3em 3em 3em;
+    margin: 1em 3em 3em 1em;
 }
 
 #visit {
@@ -75,7 +82,7 @@ body {
     padding-left: 3em;
     padding-top: 1em;
     text-align: left;
-    background-color: rgb(141,141,141);
+    background-color: rgba(141,141,141,0.5);
     color: rgb(40,46,43);
     border: 10px solid whitesmoke;
 }
@@ -97,8 +104,3 @@ div {
     margin-left: 5.5em; 
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
 }
-
-
-/*img {
-    width: 5em;
-}*/

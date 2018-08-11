@@ -1,5 +1,5 @@
 var hours = ["10:00", "11:00", "12:00", "1:00", "2:00", "3:00", "4:00", "5:00"];
-var tableStyle = "style='line-height: 1.3; font-size: 14px; width: 175px; box-shadow: 0 4px 8px 0 #222222; float: left; background-color: rgb(40,46,43); color: whitesmoke; margin-left: 10px; padding: 1em; border: 1px solid white;'";
+var tableStyle = "style='line-height: 1.3; font-size: 14px; width: 175px; box-shadow: 0 4px 8px 0 #222222; float: left; background-color: rgb(40,46,43); color: whitesmoke; margin-left: 25px; padding: 1em; border: 1px solid white;'";
 
 var headerStyle = "style='text-align: left; padding-bottom: 5px;'";
 
