@@ -16,7 +16,7 @@ var shopLocation = function(location, minCustomers, maxCustomers, avgSalesPerCus
         var cookiesSold = 0;
         var newTable = document.createElement("table");
         newTable.setAttribute("class", "cookies");
-        console.log(table);
+    
         var body = document.createElement("tbody");
         var row = document.createElement("tr");
         var cell = document.createElement("td");
@@ -48,6 +48,7 @@ var shopLocation = function(location, minCustomers, maxCustomers, avgSalesPerCus
             body.appendChild(row);
             cookiesSold += hourlyCookies;
         }
+
         row = document.createElement("tr");
         cell = document.createElement("td");
         cell.innerText = "Total: ";
