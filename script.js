@@ -72,10 +72,25 @@ shops.push(new shopLocation("Sellwood", 20, 48, 3.3));
 shops.push(new shopLocation("Pearl District", 3, 24, 2.6));
 
 var placeTable = document.getElementById("store-locations");
-for (var index = 0; index < shops.length; index++) {
+if (placeTable) {
+    for (var index = 0; index < shops.length; index++) {
     shops[index].makeTable(placeTable);
+    }
 }
 
+function addNewShop() {
+    var locName = document.getElementById("name").value;
+    var minimum = document.getElementById("min").value;
+    var maximum = document.getElementById("max").value;
+    var averageSales = document.getElementById("average").value;
+    shops.push(new shopLocation(locName, minimum, maximum, averageSales));
+    console.log(locName, minimum, maximum, averageSales);
+    event.preventDefault();
+    shops[shops.length - 1].makeTable(placeTable);
+}
+
+var addShop = document.getElementById("submit");
+addShop.addEventListener("click", addNewShop, false);
 
 // var pioneerSquare = {
 //     location: "Pioneer Square",
