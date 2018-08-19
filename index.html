@@ -20,7 +20,7 @@
         <a href="#shop">Shop</a>
         <a href="#cookieCalc">Cookie Calculator</a>
         <a href="styleguide.html">Style Guide</a>
-        <a href="addshop.html">Add a Location</a>
+        <a href="#form">Add a Location</a>
     </nav> 
 
     <section id="about">
@@ -81,6 +81,20 @@
     </section>
     <h2 id="cookieCalc">Cookie Calculator</h2>
     <div id="store-locations"></div>
+    <div class="addShopForm">
+        <h1 class="addShop">Add a shop location:</h1>
+        <fieldset class="fieldset">
+            <form id="form" method="GET" action="#">
+                <p>Shop Location <input type="text" name="location" value="" id="name"></p>
+                <p>Minimum number of customers per day <input type="number" name="min customers" value="" id="min"></p>
+                <p>Maximum number of customers per day <input type="number" name="max customers" value="" id="max"></p>
+                <p>Average number of cookies sold per transaction <input type="number" name="avg cookies" value="" id="average"></p>
+                <div id="submit">
+                    <input type="button" value="Add New Shop">
+                </div>
+            </form>
+        </fieldset>  
+        </div>
 </main>
 <footer>&copy; 2018 Kate Dameron</footer>
     <script type="text/javascript" src="script.js"></script>
