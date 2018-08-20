@@ -117,7 +117,20 @@ function deleteThisShop() {
         shops[index].makeTable(placeTable);
         }
     }
-
+    var eraseDropMenu = document.getElementById("dropDownList");
+    eraseDropMenu.innerText = "";
+    console.log(replaceDropMenu);
+    for (var index = 0; index < shops.length; index++) {
+        var replaceDropMenu = document.getElementById("dropDownList");
+        var newOption = document.createElement("option")
+        console.log(newOption);
+        newOption.setAttribute("value", shops[index].location);
+        console.log(newOption);
+        newOption.innerText = shops[index].location;
+        console.log(newOption);
+        replaceDropMenu.appendChild(newOption);
+        console.log(replaceDropMenu);
+    }
 }
     
 var deleteShop = document.getElementById("delete");
