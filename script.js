@@ -84,28 +84,27 @@ function addNewShop() {
     var minimum = document.getElementById("min").value;
     var maximum = document.getElementById("max").value;
     var averageSales = document.getElementById("average").value;
-    shops.push(new shopLocation(locName, minimum, maximum, averageSales));
-    console.log(locName, minimum, maximum, averageSales);
-    event.preventDefault();
-    shops[shops.length - 1].makeTable(placeTable);
-    var dropDownMenu = document.getElementById("dropDownList");
-    var addDropDown = document.createElement("option");
-    addDropDown.setAttribute("value", locName);
-    addDropDown.innerText = locName;
-    console.log(addDropDown);
-    dropDownMenu.appendChild(addDropDown);
+    if (document.getElementById('name').value.length == 0) {
+       alert("Please fill in all fields in the form"); 
+    } else {
+        shops.push(new shopLocation(locName, minimum, maximum, averageSales));
+        event.preventDefault();
+        shops[shops.length - 1].makeTable(placeTable);
+        var dropDownMenu = document.getElementById("dropDownList");
+        var addDropDown = document.createElement("option");
+        addDropDown.setAttribute("value", locName);
+        addDropDown.innerText = locName;
+        dropDownMenu.appendChild(addDropDown); 
+    }
 }
 
 var addShop = document.getElementById("submit");
 addShop.addEventListener("click", addNewShop, false);
 
 function deleteThisShop() {
-    console.log(this.form.pickAShop.value);
     var selection = this.form.pickAShop.value;
-    console.log("user selected " + selection);
     for (var index = 0; index < shops.length; index++){
       if (selection == shops[index].location) {
-        console.log("got a match");
         shops.splice(index, 1);
       }  
     }
@@ -119,17 +118,12 @@ function deleteThisShop() {
     }
     var eraseDropMenu = document.getElementById("dropDownList");
     eraseDropMenu.innerText = "";
-    console.log(replaceDropMenu);
     for (var index = 0; index < shops.length; index++) {
         var replaceDropMenu = document.getElementById("dropDownList");
         var newOption = document.createElement("option")
-        console.log(newOption);
         newOption.setAttribute("value", shops[index].location);
-        console.log(newOption);
         newOption.innerText = shops[index].location;
-        console.log(newOption);
         replaceDropMenu.appendChild(newOption);
-        console.log(replaceDropMenu);
     }
 }
     
