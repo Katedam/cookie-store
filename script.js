@@ -14,6 +14,7 @@ var shopLocation = function(location, minCustomers, maxCustomers, avgSalesPerCus
 
     this.makeTable = function(table) {
         var cookiesSold = 0;
+
         var newTable = document.createElement("table");
         newTable.setAttribute("class", "cookies");
     
@@ -87,7 +88,37 @@ function addNewShop() {
     console.log(locName, minimum, maximum, averageSales);
     event.preventDefault();
     shops[shops.length - 1].makeTable(placeTable);
+    var dropDownMenu = document.getElementById("dropDownList");
+    var addDropDown = document.createElement("option");
+    addDropDown.setAttribute("value", locName);
+    addDropDown.innerText = locName;
+    console.log(addDropDown);
+    dropDownMenu.appendChild(addDropDown);
 }
 
 var addShop = document.getElementById("submit");
 addShop.addEventListener("click", addNewShop, false);
+
+function deleteThisShop() {
+    console.log(this.form.pickAShop.value);
+    var selection = this.form.pickAShop.value;
+    console.log("user selected " + selection);
+    for (var index = 0; index < shops.length; index++){
+      if (selection == shops[index].location) {
+        console.log("got a match");
+        shops.splice(index, 1);
+      }  
+    }
+    var eraseTables = document.getElementById("store-locations");
+    eraseTables.innerText = "";
+    var placeTable = document.getElementById("store-locations");
+    if (placeTable) {
+        for (var index = 0; index < shops.length; index++) {
+        shops[index].makeTable(placeTable);
+        }
+    }
+
+}
+    
+var deleteShop = document.getElementById("delete");
+deleteShop.addEventListener("click", deleteThisShop, false);

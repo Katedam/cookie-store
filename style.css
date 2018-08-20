@@ -1,22 +1,4 @@
-@font-face {
-    font-family: 'Ubuntu', sans-serif;
-    src: url(https://fonts.googleapis.com/css?family=Ubuntu);
-}
-
-@font-face {
-    font-family: 'Nunito', sans-serif;
-    src: url(https://fonts.googleapis.com/css?family=Nunito);
-}
-
-@font-face {
-    font-family: 'Bree Serif', serif;
-    src: url(https://fonts.googleapis.com/css?family=Bree+Serif);
-}
-
-@font-face {
-    font-family: 'Questrial', sans-serif;
-    src: url(https://fonts.googleapis.com/css?family=Questrial);
-}
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif|Nunito|Questrial|Ubuntu');
  
 body {
     font-family: 'Nunito', sans-serif;
@@ -29,7 +11,7 @@ h1 {
     color: #282e2b;
 }
 
-div.addShopForm {
+div.addRemoveForm {
     margin-left: 23%;
     margin-top: 3em;
     width: 50%;
@@ -37,15 +19,20 @@ div.addShopForm {
     background-color: #d9b669;
 }
 
-h1.addShop { 
+h1.formHeader { 
     box-shadow: 0 4px 8px 0 rgb(40,46,43);
     background-color: rgb(250, 128, 114);
     padding: 0.5em;
 }
 
 .fieldset {
+    padding-top: 13px;
     height: 200px;
     border-style: 2px double #282e2b;
+}
+
+label + input {
+    margin-bottom: 20px;
 }
 
 h2 {
